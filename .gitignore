@@ -1,0 +1,11 @@
+config.json
+.DS_Store
+.vscode/
+*.log
+*.pyc
+__pycache__/
+*.pyo
+*.env
+*.egg-info/
+dist/
+build/
