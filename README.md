@@ -43,7 +43,7 @@ docker exec -it rengine-celery-1 bash
 apt-get install vim -y && cd  ~/nuclei-templates/ && git clone https://github.com/soapffz/AggregateNucleiTemplates && cd AggregateNucleiTemplates/ && pip3 install -r requirements.txt && cp config.json.example config.json && vim config.json
 
 # 执行下载脚本
-python3 aggregate_templates.py
+python3 aggregate_templates.py -all
 
 # 将脚本复制到当前目录（先别急着退出shell）
 cp ALL/*.yaml ~/nuclei-templates/
@@ -86,5 +86,5 @@ severity 删除, low, info
 
 ## 更新日志
 
-- 2023 年 8 月 19 日：完善项目，上传到 github，项目状态未公开，-all 全量下载并去重没啥问题了，-update 更新脚本还没有详细测试
+- 2023 年 8 月 19 日：完善项目，上传到 github，项目状态为公开，-all 全量下载并去重没啥问题了，-update 更新脚本还没有详细测试
 - 2023 年 7 月 19 日：初始化项目
