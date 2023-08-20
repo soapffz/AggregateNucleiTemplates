@@ -46,7 +46,7 @@ apt-get install vim -y && cd  ~/nuclei-templates/ && git clone https://github.co
 python3 aggregate_templates.py -all
 
 # 将脚本复制到当前目录（先别急着退出shell）
-cp ALL/*.yaml ~/nuclei-templates/
+cp ALL/*.yaml ../ && cd ..
 ```
 
 此时在 reNgine 的 Tool Settings 中即可看到 nuclei 处已经爆炸
@@ -59,7 +59,7 @@ cp ALL/*.yaml ~/nuclei-templates/
 find . -maxdepth 1 -name "*.yaml" -exec basename {} .yaml \; | tr '\n' ',' | sed 's/,$/\n/' | sed 's/,/, /g' > names.txt
 ```
 
-复制到宿主机，在宿主机运行
+exit 退出到宿主机，在宿主机运行
 
 ```bash
 docker cp rengine-celery-1:/root/nuclei-templates/names.txt .
